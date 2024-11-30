@@ -1,15 +1,10 @@
-document.getElementById('mobile-menu').addEventListener('click', function() {
-    var nav = document.getElementById('nav-menu');
-    nav.classList.toggle('active');
-});
-
-// Smooth scroll for internal links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+// JavaScript for mobile menu toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('mobile-menu');
+    const navMenu = document.getElementById('nav-menu');
+    
+    // Toggle navigation menu visibility
+    menuToggle.addEventListener('click', function() {
+        navMenu.classList.toggle('active'); // Adds or removes 'active' class to nav
     });
 });
