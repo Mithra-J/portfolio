@@ -378,51 +378,86 @@
             color: var(--text-primary);
         }
 
-        /* Resume Section */
+        /* Resume Section - UPDATED */
         .resume-section {
             background: linear-gradient(to right, var(--bg-secondary), var(--bg-primary));
-            text-align: left;
+            text-align: center;
         }
 
         .resume-section p {
-            margin-bottom: 1.8rem;
+            margin-bottom: 2.5rem;
             max-width: 600px;
-            
+            margin-left: auto;
+            margin-right: auto;
             color: var(--text-primary);
         }
 
-        .project-demo button {
+        .resume-options {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .resume-option {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px var(--shadow-color);
+            transition: all 0.3s ease;
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .resume-option:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px var(--shadow-color);
+            border-color: var(--primary);
+        }
+
+        .option-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .resume-option h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .resume-option p {
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .resume-option button {
             background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
             border: none;
-            padding: 0.9rem 1.8rem;
+            padding: 0.8rem 1.5rem;
             font-size: 1rem;
             border-radius: 50px;
-            cursor: none;
+            cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 5px 15px rgba(142, 45, 226, 0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-demo button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 18px rgba(142, 45, 226, 0.4);
-        }
-
-        .project-demo button:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
             width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transition: 0.5s;
+            margin-top: auto;
         }
 
-        .project-demo button:hover:before {
-            left: 100%;
+        .resume-option button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(142, 45, 226, 0.4);
         }
 
         /* Education Section */
@@ -840,6 +875,16 @@
             .contact ul {
                 grid-template-columns: repeat(2, 1fr);
             }
+            
+            .resume-options {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .resume-option {
+                width: 100%;
+                max-width: 100%;
+            }
         }
 
         @media (max-width: 768px) {
@@ -931,7 +976,7 @@
                 <p>I'm a pre-final year at St. Joseph's College of Engineering pursuing B.Tech in IT. Passionate about programming, problem solving and web development.</p>
             </div>
             <div class="profile-img-container">
-                <img src=https://image2url.com/images/1764518327681-4d17e49f-11ae-43fa-bb7a-5f13ffab4e7f.jpeg alt="Mithra J." class="profile-img">
+                <img src="https://image2url.com/images/1764518327681-4d17e49f-11ae-43fa-bb7a-5f13ffab4e7f.jpeg" alt="Mithra J." class="profile-img">
             </div>
         </div>
     </section>
@@ -943,14 +988,27 @@
         <p>In the future, I hope to work as a web developer or software engineer, contributing to impactful projects and expanding my technical expertise.</p>
     </section>
     
-     <!-- Resume Section -->
+    <!-- Resume Section - UPDATED -->
     <section id="resume" class="resume-section">
         <h2>Resume</h2>
-       <p>Click below to view or download my latest resume with all my experiences, skills, and achievements.</p>
-        <div class="project-demo">
-            <button onclick="window.open('https://drive.google.com/file/d/1vFp7fPG6JJS49VlYX6IPKM9CH41d68LQ/view?usp=sharing', '_blank')">
-                View Resume
-            </button>
+        <p>Choose how you'd like to access my resume - view it online or download it directly.</p>
+        <div class="resume-options">
+            <div class="resume-option">
+                <div class="option-icon">👁️</div>
+                <h3>View Online</h3>
+                <p>Open the resume in your browser to read it</p>
+                <button onclick="window.open('https://drive.google.com/file/d/1vFp7fPG6JJS49VlYX6IPKM9CH41d68LQ/view?usp=sharing', '_blank')">
+                    View Resume
+                </button>
+            </div>
+            <div class="resume-option">
+                <div class="option-icon">📥</div>
+                <h3>Download</h3>
+                <p>Save a copy directly to your device</p>
+                <button onclick="window.open('https://drive.google.com/uc?export=download&id=1vFp7fPG6JJS49VlYX6IPKM9CH41d68LQ', '_blank')">
+                    Download PDF
+                </button>
+            </div>
         </div>
     </section>
 
@@ -984,7 +1042,7 @@
                 <strong>Database:</strong> MySQL
             </li>
             <li>
-                <strong>Platforms:</strong> Google My Business, NowFloats, IndiaMART
+                <strong>Platforms:</strong> Firebase, Google My Business, NowFloats, IndiaMART
             </li>
         </ul>
     </section>
@@ -1073,54 +1131,25 @@
             </li>
         </ul>
         
-        <!-- Contact Form -->
+        <!-- Contact Form - UPDATED for Netlify Forms -->
         <div class="contact-form">
             <h3>Send me a message</h3>
-            <form id="contact-form" action="https://formspree.io/f/movngbdo" method="POST">
-  <label>Your Name</label>
-  <input type="text" name="name" required>
-  
-  <label>Your Email</label>
-  <input type="email" name="email" required>
-  
-  <label>Your Message</label>
-  <textarea name="message" required></textarea>
-  
-  <button type="submit">Send</button>
-  <p id="form-status"></p>
-</form>
-<script>
-  var form = document.getElementById("contact-form");
-  var status = document.getElementById("form-status");
-
-  form.addEventListener("submit", async function(e) {
-    e.preventDefault();
-    var data = new FormData(form);
-    fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        status.innerHTML = "✅ Thanks for your submission!";
-        form.reset();
-      } else {
-        response.json().then(data => {
-          if (data.errors) {
-            status.innerHTML = data.errors.map(e => e.message).join(", ");
-          } else {
-            status.innerHTML = "❌ Oops! There was a problem submitting your form.";
-          }
-        });
-      }
-    }).catch(() => {
-      status.innerHTML = "❌ Oops! There was a problem submitting your form.";
-    });
-  });
-</script>
-                
-                <div class="form-status" id="form-status"></div>
-            
+            <form name="contact" method="POST" netlify>
+                <div class="form-group">
+                    <label>Your Name</label>
+                    <input type="text" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Email</label>
+                    <input type="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label>Your Message</label>
+                    <textarea name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="form-status" id="form-status" style="display: none;"></div>
         </div>
     </section>
 
@@ -1238,62 +1267,39 @@
             });
         }
 
-        // Form submission handling
-        const contactForm = document.getElementById('contact-form');
+        // Netlify Forms handling
+        const contactForm = document.querySelector('form[name="contact"]');
         const formStatus = document.getElementById('form-status');
-        const submitBtn = document.getElementById('submit-btn');
-        const btnText = document.getElementById('btn-text');
-        
+
         if (contactForm) {
-            contactForm.addEventListener('submit', async function(event) {
-                event.preventDefault();
+            contactForm.addEventListener('submit', function(event) {
+                // Show processing state
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
                 
-                // Disable submit button and show loading state
+                submitBtn.textContent = 'Sending...';
                 submitBtn.disabled = true;
-                btnText.textContent = 'Sending...';
                 
-                // Show processing message
                 formStatus.textContent = 'Sending your message...';
                 formStatus.className = 'form-status processing';
+                formStatus.style.display = 'block';
                 
-                try {
-                    const formData = new FormData(contactForm);
-                    const response = await fetch(contactForm.action, {
-                        method: 'POST',
-                        body: formData,
-                        headers: {
-                            'Accept': 'application/json'
-                        }
-                    });
-                    
-                    if (response.ok) {
-                        // Success message
-                        formStatus.textContent = 'Thanks for your message! I\'ll get back to you soon.';
-                        formStatus.className = 'form-status success';
-                        contactForm.reset();
-                    } else {
-                        const data = await response.json();
-                        if (data.errors) {
-                            formStatus.textContent = data.errors.map(error => error.message).join(', ');
-                        } else {
-                            formStatus.textContent = 'Oops! There was a problem submitting your form.';
-                        }
-                        formStatus.className = 'form-status error';
-                    }
-                } catch (error) {
-                    formStatus.textContent = 'Oops! There was a problem submitting your form.';
-                    formStatus.className = 'form-status error';
-                } finally {
-                    // Reset button state
+                // Netlify will handle the actual submission
+                // We'll show success message after form reset
+                setTimeout(() => {
+                    formStatus.textContent = 'Thanks! Your message has been sent successfully.';
+                    formStatus.className = 'form-status success';
+                    submitBtn.textContent = originalText;
                     submitBtn.disabled = false;
-                    btnText.textContent = 'Send Message';
                     
-                    // Clear status message after 5 seconds
+                    // Clear the form
+                    contactForm.reset();
+                    
+                    // Hide status after 5 seconds
                     setTimeout(() => {
-                        formStatus.textContent = '';
-                        formStatus.className = 'form-status';
+                        formStatus.style.display = 'none';
                     }, 5000);
-                }
+                }, 1500);
             });
         }
 
@@ -1304,4 +1310,4 @@
         window.addEventListener('scroll', checkScroll);
     </script>
 </body>
-</html
+</html>
